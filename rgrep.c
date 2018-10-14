@@ -6,14 +6,14 @@
  * Returns true if partial_line matches pattern, starting from
  * the first char of partial_line.								//make clear and make checks to run 
  */
-int nextchar (char *string){
+int nextchar (char *string){				//moving to the right to the next character in a string 
 	char *next = '0/';
 	 *next = *(string + sizeof(char));
 
 	 return *next;
 }
 
-int prevchar (char *string){
+int prevchar (char *string){		//moving to the left in a string 
 	char *prev = '0/';
 	*prev = *(string - sizeof(char));
 
@@ -22,19 +22,26 @@ int prevchar (char *string){
 int matches_leading(char *partial_line, char *pattern) {		/*compare the characters in orderd to find the characters that are in the midlle
 																//recursive */
  // Implement if desire 
-	/*while (*line != '\0'){
-
-		if (pattern =){
-			printf("/%c", *line);
-			line++;
+	/*
+//index that points to the pattern or char that want ot check if matches 
+//if there is no match return 0
+//need a for loop to check every pattern
+//a while loop to check next character with the pattern
+	*/
+	int i=0;
+	while (pattern[i] != '\0' && partial_line[i] != '\0'){
+		if (pattern[i]==partial_line[i]) {
+			i++;
+		} else{
+			return 0;
 		}
-	//}																
+	}										
+	
 
-*/
   return 0;
 }
 
-int cases(char pattern){
+/*int cases(char pattern){
 	char pattern = 0;
 
 	switch (pattern){
@@ -42,18 +49,18 @@ int cases(char pattern){
 			
 		return 1;
 
-		case '+':printf(nextchar(pattern));
+		case '+'://printf(nextchar(pattern));
 		return 2;
 
 		case '?':
 		return 3;
 
-	/*	case '\':
+		case '\':
 		return 4;
-*/
+
 	}
 	return 0;
-}
+} 
 int period(char *pattern){
 	if (nextchar(pattern) == '.'){
 		return 1;
@@ -72,7 +79,7 @@ int question(char *pattern){
 	}
 }
 
-/*int backlash(char *pattern){
+int backslash(char *pattern){
 	if (prevchar(pattern == '\')){
 
 	} 
@@ -84,21 +91,19 @@ int question(char *pattern){
  * Implementation of the rgrep matcher function
  */
 int rgrep_matches(char *line, char *pattern) {		//patterns pointitng at the strings 
+//line is the address or the array 
+// Implement me 
+int i = 0;
+  	while (line[i] != '\0'){
+  		if (pattern[i] == matches_leading(partial_line, pattern)){
+  			return 1;
 
-    //
-    // Implement me 
-    //
-  /* if (*pattern == '\0'){
-   		
+  			//i++;
+  		}
+  		return 0;
+  	}
 
-   		if (line = ){
-	
-   		}
-   }
-
-*/
-    return 0;
-}
+ 
 
 int main(int argc, char **argv) {	//way to send arguments to program
     if (argc != 2) {				
